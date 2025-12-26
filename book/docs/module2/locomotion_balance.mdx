@@ -1,0 +1,77 @@
+---
+id: locomotion_balance
+title: Locomotion and Balance
+sidebar_label: Locomotion & Balance
+---
+
+## Learning Objectives
+
+- Understand various humanoid locomotion strategies.
+- Explore methods for maintaining dynamic balance.
+
+## Overview
+
+This chapter covers the critical aspects of enabling humanoid robots to move effectively and maintain stability across different terrains and gaits.
+
+## Main Content
+
+One of the most challenging aspects of humanoid robotics is achieving robust and versatile locomotion while maintaining dynamic balance. Humans perform these tasks seemingly effortlessly, but replicating this in robots requires sophisticated control strategies.
+
+### Locomotion Strategies
+
+Humanoid robots primarily utilize bipedal locomotion, which is inherently unstable but offers significant advantages in human-centric environments. Alternative strategies, though less common for true humanoids, include:
+
+*   **Bipedal Walking**: The most human-like form of locomotion, involving alternating steps on two legs. This is highly complex due to the narrow support base and dynamic nature of the movement.
+*   **Crawling/Rolling**: Used in some specialized robots, but not typical for general-purpose humanoids.
+*   **Jumping/Running**: More dynamic forms of bipedal locomotion, requiring even more advanced control and robust hardware (e.g., Boston Dynamics' Atlas).
+
+### Dynamic Balance Control
+
+Maintaining balance is critical for any mobile robot, but especially for bipedal humanoids. Key concepts and methods include:
+
+1.  **Center of Mass (CoM)**: The average position of all the mass in the robot. For static stability, the CoM must remain within the robot's support polygon (the area enclosed by the points of contact with the ground).
+
+2.  **Zero Moment Point (ZMP)**: A crucial concept for dynamic balance in bipedal robots.
+
+```mermaid
+graph TD
+    A[Robot Body] --> B{Center of Mass (CoM)}
+    B --> C[Zero Moment Point (ZMP)]
+    C -- Keep within --> D[Support Polygon]
+```
+The ZMP is the point on the ground about which the net moment of all forces (gravity, inertia, contact forces) is zero. For stable walking, the ZMP must remain within the support polygon (typically the foot in contact with the ground) throughout the step.
+    *   **ZMP Control**: Algorithms calculate the desired ZMP trajectory for stable walking and adjust joint torques to ensure the actual ZMP follows this trajectory.
+
+3.  **Support Polygon (SP)**: The convex hull of the contact points of the robot with the ground. For static stability, the projection of the CoM must be within the SP. For dynamic walking, the ZMP must be within the SP.
+
+4.  **Gait Generation**: Creating the sequence of joint trajectories and foot placements that result in stable and efficient walking. This can involve:
+    *   **Pattern Generators**: Pre-defined patterns that are adapted in real-time.
+    *   **Optimization-based Methods**: Calculating optimal gaits based on energy efficiency, stability, or speed criteria.
+    *   **Reinforcement Learning**: Training a robot to learn walking gaits through trial and error in simulation and transferring to real hardware.
+
+5.  **Disturbance Rejection**: Humanoid robots must be able to recover from external pushes or uneven terrain. This often involves:
+    *   **Feedback Control**: Using sensor data (IMUs, force sensors) to detect disturbances and adjust joint torques or foot placement.
+    *   **Model Predictive Control (MPC)**: Predicting future states of the robot and optimizing control actions over a short horizon to maintain stability.
+
+### Challenges
+
+*   **Robustness**: Achieving stable locomotion across a wide range of terrains and disturbances.
+*   **Energy Efficiency**: Walking consumes significant power, limiting battery life.
+*   **Speed and Agility**: Matching human walking speed and agility is still a major challenge.
+*   **Compliance**: Designing robots that can yield to unexpected contacts without losing balance or damaging themselves.
+
+## Summary
+
+Humanoid robot locomotion and balance are critical for their ability to navigate and interact in the physical world. Bipedal walking is the primary locomotion strategy, though it presents significant stability challenges. Dynamic balance is maintained through sophisticated control methods that manage the robot's Center of Mass (CoM) and ensure the Zero Moment Point (ZMP) stays within the support polygon. Gait generation involves creating stable walking patterns, while disturbance rejection mechanisms allow robots to recover from external perturbations. Despite challenges in robustness, energy efficiency, speed, and compliance, advancements in these areas are continuously improving the mobility of humanoid robots.
+
+## Key Terms
+
+- Zero Moment Point (ZMP)
+- Center of Mass (CoM)
+- Gait Generation
+- Bipedalism
+
+## Review Questions
+
+1. Describe the Zero Moment Point (ZMP) concept in humanoid balance.
+2. What are the main challenges in achieving robust bipedal locomotion?
