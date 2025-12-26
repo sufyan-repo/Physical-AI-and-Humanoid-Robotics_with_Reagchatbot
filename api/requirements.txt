@@ -24,6 +24,9 @@ cohere>=4.0.0
 python-dotenv>=1.0.0
 mangum>=0.17.0
 
+# Vercel specific
+aiofiles>=23.0.0
+
 # Development
 ruff>=0.1.0
 black>=23.0.0
