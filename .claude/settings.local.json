@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch:*)",
+      "Bash(npx create-docusaurus@latest:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
