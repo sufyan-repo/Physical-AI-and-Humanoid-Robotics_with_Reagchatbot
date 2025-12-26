@@ -1,0 +1,66 @@
+---
+id: kinematics_dynamics
+title: Kinematics and Dynamics
+sidebar_label: Kinematics & Dynamics
+---
+
+## Learning Objectives
+
+- Grasp the concepts of forward and inverse kinematics.
+- Understand basic rigid-body dynamics for humanoid robots.
+
+## Overview
+
+This chapter delves into the mathematical frameworks of kinematics (motion without forces) and dynamics (motion with forces) essential for understanding and controlling humanoid robots.
+
+## Main Content
+
+To enable humanoid robots to perform sophisticated movements and interact with their environment, a deep understanding of their kinematics and dynamics is essential. These mathematical frameworks describe a robot's motion and the forces/torques involved.
+
+### Kinematics: Describing Motion
+
+![Humanoid Kinematics](/img/humanoid_kinematics.png)
+
+Kinematics deals with the description of motion of rigid bodies without considering the forces that cause the motion. For a humanoid robot, this involves understanding the relationship between joint angles and the position/orientation of its end-effectors (e.g., hands, feet).
+
+1.  **Forward Kinematics (FK)**: Given the joint angles of a robot, FK calculates the position and orientation of its end-effector in 3D space. It's a straightforward calculation, often using Denavit-Hartenberg (DH) parameters or product of exponentials (PoE) formulas.
+    *   **Application**: Knowing where the hand is given specific arm joint configurations.
+
+2.  **Inverse Kinematics (IK)**: Given a desired position and orientation for the end-effector, IK calculates the corresponding joint angles required to achieve that pose. This is generally more complex than FK, as it can have multiple solutions, no solutions, or singularities.
+    *   **Application**: Moving a robot's hand to grasp an object at a specific location, or determining leg joint angles for a desired foot placement during walking.
+
+### Dynamics: Understanding Forces and Motion
+
+Dynamics extends kinematics by considering the forces and torques that cause or are caused by motion. For humanoid robots, dynamics is crucial for tasks requiring physical interaction, balance, and stable locomotion.
+
+1.  **Rigid-Body Dynamics**: Models the robot's links as rigid bodies with mass and inertia, and joints as connections between them. It involves calculating:
+    *   **Lagrangian Dynamics**: A common approach that uses energy (kinetic and potential) to derive equations of motion. It provides a systematic way to model complex multi-joint systems.
+    *   **Newton-Euler Dynamics**: An alternative approach that applies Newton's second law and Euler's equations for rotational motion to each link, propagating forces and moments along the kinematic chain.
+
+2.  **Inverse Dynamics**: Given desired accelerations (and thus motion), inverse dynamics calculates the joint torques required to achieve that motion. This is vital for control, as it tells the actuators how much force to exert.
+    *   **Application**: Computing the joint torques needed to make a robot walk with a specific gait or lift a certain weight.
+
+3.  **Forward Dynamics**: Given joint torques (from actuators) and external forces, forward dynamics predicts the resulting accelerations and subsequent motion. This is often used in simulation to predict a robot's behavior.
+    *   **Application**: Simulating a robot's response to a push or an uneven surface.
+
+### Relevance to Humanoid Robotics
+
+*   **Locomotion**: Kinematics defines foot trajectories, while dynamics ensures stable walking by managing the robot's Center of Mass (CoM) and Zero Moment Point (ZMP).
+*   **Manipulation**: IK allows precise positioning of grippers, and inverse dynamics enables force control for delicate tasks.
+*   **Balance**: Dynamic models are used to predict and counteract disturbances, crucial for maintaining stability.
+
+## Summary
+
+Kinematics and dynamics are fundamental mathematical tools for understanding and controlling humanoid robots. Kinematics describes motion: forward kinematics determines end-effector pose from joint angles, while inverse kinematics calculates joint angles for a desired end-effector pose. Dynamics, which considers forces, is crucial for physical interaction and balance. Inverse dynamics calculates required joint torques for desired motion, while forward dynamics predicts motion from given torques. These frameworks are indispensable for enabling complex tasks like stable locomotion, dexterous manipulation, and robust balance in humanoid robots.
+
+## Key Terms
+
+- Forward Kinematics
+- Inverse Kinematics
+- Jacobian
+- Lagrangian Dynamics
+
+## Review Questions
+
+1. Explain the difference between forward and inverse kinematics.
+2. How are dynamics relevant to stable locomotion?
