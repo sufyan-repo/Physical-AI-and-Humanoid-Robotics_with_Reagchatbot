@@ -1,10 +1,10 @@
 {
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/vercel_api.py" },
+    { "source": "/api/(.*)", "destination": "/api/api.py" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "functions": {
-    "api/vercel_api.py": {
+    "api/api.py": {
       "runtime": "python@3.12"
     }
   }
