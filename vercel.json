@@ -1,5 +1,11 @@
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/index.html"}
-]
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/vercel_api.py" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "functions": {
+    "api/vercel_api.py": {
+      "runtime": "python3.12"
+    }
+  }
 }
