@@ -1,0 +1,65 @@
+---
+id: robot_hardware_overview
+title: Robot Hardware Overview
+sidebar_label: Robot Hardware Overview
+---
+
+## Learning Objectives
+
+- Identify key components of humanoid robot hardware.
+- Understand the function of different sensors and actuators.
+
+## Overview
+
+This chapter provides an overview of the essential hardware components that constitute humanoid robots, from sensors to actuators.
+
+## Main Content
+
+Humanoid robots are complex systems that integrate sophisticated hardware components to mimic human capabilities in perception, movement, and interaction. A foundational understanding of these components is crucial for anyone working in physical AI.
+
+### Sensors: The Robot's Perception
+
+Sensors allow robots to perceive their internal state and the external environment. They are vital for navigation, object interaction, and maintaining balance.
+
+*   **Vision Sensors (Cameras)**: Provide visual information for object recognition, depth perception (stereo or RGB-D cameras like Intel RealSense or Microsoft Kinect), and facial recognition. Modern humanoid robots often integrate multiple cameras for a wide field of view.
+*   **Inertial Measurement Units (IMUs)**: Combine accelerometers and gyroscopes to measure orientation, angular velocity, and linear acceleration. Essential for balance, proprioception, and estimating body pose (e.g., in Atlas, Optimus).
+*   **Force/Torque Sensors**: Located in joints, wrists, and feet, these sensors measure forces and torques applied by or to the robot. Critical for dexterous manipulation, safe physical human-robot interaction, and precise locomotion.
+*   **Tactile Sensors**: Provide a sense of touch, often embedded in fingertips or gripper surfaces. Used for detecting contact, pressure, and texture, enhancing manipulation capabilities.
+*   **Lidar/Radar**: Used for mapping the environment, obstacle detection, and navigation, particularly in larger environments.
+
+### Actuators: The Robot's Movement
+
+Actuators are the components responsible for generating movement in a robot. They convert energy (typically electrical) into mechanical force or torque.
+
+*   **Electric Motors**: The most common type of actuator in humanoid robots. Brushless DC (BLDC) motors are favored for their efficiency, power density, and control precision. Each joint in a humanoid robot typically has one or more motors.
+*   **Gearboxes/Transmissions**: Motors often operate at high speeds and low torque. Gearboxes reduce speed and amplify torque, transmitting power effectively to the robot's limbs.
+*   **Hydraulic/Pneumatic Actuators**: Used in some high-power robots (e.g., older versions of Boston Dynamics' Atlas) for their strength and rapid response, though they come with complexity and maintenance challenges.
+*   **Series Elastic Actuators (SEAs)**: Incorporate a spring in series with the motor. This provides compliance, improving safety in human-robot interaction, absorbing shocks, and enabling more natural, compliant movements (e.g., for delicate grasping).
+
+### Mechanical Structure: The Robot's Body
+
+The physical frame of the humanoid robot provides support for all components and defines its degrees of freedom (DoF).
+
+*   **Joints**: Enable rotation and translation, allowing the robot to move its limbs. Humanoid robots have many DoFs to mimic human-like articulation (e.g., 20-30 DoF or more).
+*   **Materials**: Lightweight and strong materials like aluminum alloys, carbon fiber composites are used to maximize payload capacity and energy efficiency while ensuring durability.
+
+### Power Systems
+
+*   **Batteries**: Typically lithium-ion batteries provide the necessary power for onboard electronics, sensors, and actuators. Battery life and energy management are critical challenges.
+*   **Power Management Units (PMUs)**: Regulate and distribute power efficiently to various components.
+
+## Summary
+
+Humanoid robot hardware is a complex integration of sensors for perception, actuators for movement, and a robust mechanical structure. Vision sensors, IMUs, force/torque sensors, and tactile sensors enable robots to understand their environment and internal state. Electric motors, often coupled with gearboxes or Series Elastic Actuators, provide the means for precise and powerful movements. The mechanical design defines the robot's degrees of freedom, while power systems ensure operational endurance. Continuous advancements in these hardware components are crucial for pushing the capabilities of physical AI and humanoid robotics, allowing for more agile, dexterous, and interactive machines.
+
+## Key Terms
+
+- Actuator
+- Sensor
+- Degrees of Freedom (DoF)
+- End-effector
+
+## Review Questions
+
+1. List and describe two types of sensors used in humanoid robots.
+2. Explain the role of actuators in robot movement.
