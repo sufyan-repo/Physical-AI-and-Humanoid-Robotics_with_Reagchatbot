@@ -1,0 +1,80 @@
+---
+id: decision_making_planning
+title: Decision-Making and Planning
+sidebar_label: Decision Making & Planning
+---
+
+## Learning Objectives
+
+- Grasp fundamental concepts of robotic decision-making.
+- Understand planning algorithms for autonomous navigation and task execution.
+
+## Overview
+
+This chapter delves into how humanoid robots make decisions, plan actions, and navigate complex, uncertain environments.
+
+## Main Content
+
+Robotic decision-making and planning are critical for enabling autonomous behavior. These processes allow robots to determine what actions to take, how to navigate through their environment, and how to execute complex tasks efficiently and safely.
+
+### Decision-Making in Robotics
+
+Decision-making in robotics involves selecting the best action or sequence of actions from a set of possible options based on the robot's goals, current state, and environmental conditions.
+
+*   **State Representation**: The robot must maintain an internal representation of its state (position, orientation, battery level, etc.) and the environment (map of obstacles, locations of objects, etc.).
+*   **Goal Specification**: Goals can be simple (move to a specific location) or complex (assemble an object, assist a human).
+*   **Action Selection**: The robot evaluates possible actions based on their predicted outcomes and selects the one that best achieves its goals while satisfying constraints (safety, efficiency).
+
+### Path Planning
+
+Path planning is the process of finding a valid and optimal route from a starting point to a destination in an environment, avoiding obstacles.
+
+*   **Algorithms**:
+    *   **A* (A-star)**: A popular graph-search algorithm that finds the shortest path by combining actual distance traveled with a heuristic estimate of remaining distance.
+    *   **Dijkstra's Algorithm**: Finds the shortest path but explores more nodes than A*.
+    *   **RRT (Rapidly-exploring Random Trees)**: Effective for high-dimensional spaces and complex environments, particularly for manipulator arms or navigating tight spaces.
+    *   **Potential Fields**: Treats the robot as a particle in a field where obstacles repel and goals attract. Simple but can suffer from local minima.
+
+### Motion Planning
+
+Motion planning goes beyond path planning by considering the robot's dynamics, kinematics, and constraints (e.g., joint limits, velocity limits) to generate a physically executable trajectory.
+
+*   **Trajectory Generation**: Converts the geometric path into a time-parameterized sequence of states (positions, velocities, accelerations) that the robot can follow.
+*   **Dynamic Feasibility**: Ensures the planned motion respects the robot's physical limitations and laws of physics.
+*   **Reactive Planning**: Adjusts the plan in real-time based on new sensor information (e.g., a suddenly appearing obstacle).
+
+### Task Planning
+
+Task planning involves decomposing high-level goals into sequences of primitive actions.
+
+*   **Hierarchical Task Networks (HTNs)**: Decompose complex tasks into simpler subtasks in a hierarchical manner.
+*   **STRIPS (Stanford Research Institute Problem Solver)**: A classical planning framework that uses logical operators to transform the world state from an initial state to a goal state.
+*   **Temporal Planning**: Considers timing constraints and concurrent actions.
+
+### Uncertainty and Stochastic Environments
+
+Real-world environments are uncertain. Robots must plan and make decisions under uncertainty.
+
+*   **Markov Decision Processes (MDPs)**: A mathematical framework for modeling decision-making in situations where outcomes are partly random and partly under the control of a decision-maker.
+*   **Partially Observable MDPs (POMDPs)**: Extend MDPs to situations where the robot does not have complete information about the state of the environment.
+*   **Probabilistic Roadmaps (PRMs)**: Precompute a roadmap of possible paths in the environment, useful for repeated planning tasks.
+
+### Integration with SLAM
+
+Simultaneous Localization and Mapping (SLAM) is crucial for planning in unknown environments. SLAM allows the robot to build a map of its environment while simultaneously localizing itself within that map. This map is then used for path and motion planning.
+
+## Summary
+
+Decision-making and planning are fundamental capabilities for autonomous robots. Decision-making involves selecting appropriate actions based on goals and environmental conditions. Path planning finds routes between locations, while motion planning generates executable trajectories considering robot dynamics. Task planning decomposes high-level goals into primitive actions. Managing uncertainty through frameworks like MDPs and POMDPs is essential for real-world operation. Integration with SLAM enables effective planning in unknown environments. These interconnected processes enable humanoid robots to operate autonomously and adaptively in complex, dynamic settings.
+
+## Key Terms
+
+- Path Planning
+- Motion Planning
+- Markov Decision Process (MDP)
+- SLAM
+
+## Review Questions
+
+1. Explain the difference between path planning and motion planning.
+2. How does SLAM contribute to a robot's autonomy?
